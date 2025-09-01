@@ -1,0 +1,70 @@
+{
+    "name": "cashkdiopen/laravel",
+    "description": "Laravel package for unified payment integration with Orange Money, MTN MoMo, and Bank Cards in Africa",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "payment",
+        "orange-money",
+        "mtn-momo",
+        "mobile-money",
+        "africa",
+        "cashkdiopen"
+    ],
+    "authors": [
+        {
+            "name": "Cashkdi Team",
+            "email": "dev@cashkdi.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^12.0",
+        "guzzlehttp/guzzle": "^7.8",
+        "ramsey/uuid": "^4.7"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^10.0",
+        "pestphp/pest": "^3.8",
+        "pestphp/pest-plugin-laravel": "^3.2",
+        "phpunit/phpunit": "^11.2",
+        "mockery/mockery": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cashkdiopen\\Laravel\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Cashkdiopen\\Laravel\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/pint"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cashkdiopen\\Laravel\\CashkdiopenServiceProvider"
+            ],
+            "aliases": {
+                "Cashkdiopen": "Cashkdiopen\\Laravel\\Facades\\Cashkdiopen"
+            }
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
