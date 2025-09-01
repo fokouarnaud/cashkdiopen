@@ -1,5 +1,5 @@
 {
-    "name": "cashkdiopen/laravel",
+    "name": "cashkdiopen/payments",
     "description": "Laravel package for unified payment integration with Orange Money, MTN MoMo, and Bank Cards in Africa",
     "type": "library",
     "license": "MIT",

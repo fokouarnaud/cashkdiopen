@@ -1,9 +1,9 @@
-# Cashkdiopen Laravel Package
+# Cashkdiopen Payments Package
 
-[![Latest Version](https://img.shields.io/packagist/v/cashkdiopen/laravel.svg?style=flat-square)](https://packagist.org/packages/cashkdiopen/laravel)
-[![Total Downloads](https://img.shields.io/packagist/dt/cashkdiopen/laravel.svg?style=flat-square)](https://packagist.org/packages/cashkdiopen/laravel)
-[![Tests](https://img.shields.io/github/actions/workflow/status/cashkdiopen/laravel/tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/cashkdiopen/laravel/actions)
-[![License](https://img.shields.io/packagist/l/cashkdiopen/laravel.svg?style=flat-square)](LICENSE.md)
+[![Latest Version](https://img.shields.io/packagist/v/cashkdiopen/payments.svg?style=flat-square)](https://packagist.org/packages/cashkdiopen/payments)
+[![Total Downloads](https://img.shields.io/packagist/dt/cashkdiopen/payments.svg?style=flat-square)](https://packagist.org/packages/cashkdiopen/payments)
+[![Tests](https://img.shields.io/github/actions/workflow/status/cashkdiopen/payments/tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/cashkdiopen/payments/actions)
+[![License](https://img.shields.io/packagist/l/cashkdiopen/payments.svg?style=flat-square)](LICENSE.md)
 
 A modern Laravel package for unified payment integration with African mobile money providers and bank cards. Supports Orange Money, MTN Mobile Money, and major card networks with a single, elegant API.
 
@@ -30,7 +30,7 @@ A modern Laravel package for unified payment integration with African mobile mon
 Install the package via Composer:
 
 ```bash
-composer require cashkdiopen/laravel
+composer require cashkdiopen/payments
 ```
 
 Publish the configuration and run migrations:
@@ -274,8 +274,8 @@ We welcome contributions! Please read our [Contributing Guide](CONTRIBUTING.md) 
 ### Development Setup
 
 ```bash
-git clone https://github.com/cashkdiopen/laravel.git
-cd laravel
+git clone https://github.com/cashkdiopen/payments.git
+cd payments
 composer install
 cp .env.example .env
 vendor/bin/pest
@@ -288,14 +288,14 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 ## 💬 Support
 
 - **Documentation**: [docs.cashkdiopen.com](https://docs.cashkdiopen.com)
-- **Issues**: [GitHub Issues](https://github.com/cashkdiopen/laravel/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/cashkdiopen/laravel/discussions)
+- **Issues**: [GitHub Issues](https://github.com/cashkdiopen/payments/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/cashkdiopen/payments/discussions)
 - **Email**: support@cashkdiopen.com
 
 ## 🙏 Credits
 
 - **Cashkdi Team** - *Initial work* - [Cashkdi](https://github.com/cashkdi)
-- **All Contributors** - [Contributors](https://github.com/cashkdiopen/laravel/contributors)
+- **All Contributors** - [Contributors](https://github.com/cashkdiopen/payments/contributors)
 
 ---
 
