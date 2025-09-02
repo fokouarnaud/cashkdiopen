@@ -33,12 +33,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Cashkdiopen\Payments\\": "src/"
+            "Cashkdiopen\\Payments\\\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Cashkdiopen\Payments\Tests\\": "tests/"
+            "Cashkdiopen\\Payments\\Tests\\\\": "tests/"
         }
     },
     "scripts": {
@@ -50,10 +50,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Cashkdiopen\Payments\CashkdiopenServiceProvider"
+                "Cashkdiopen\\Payments\\CashkdiopenServiceProvider"
             ],
             "aliases": {
-                "Cashkdiopen": "Cashkdiopen\Payments\Facades\Cashkdiopen"
+                "Cashkdiopen": "Cashkdiopen\\Payments\\Facades\\Cashkdiopen"
             }
         }
     },
