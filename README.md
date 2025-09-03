@@ -36,7 +36,7 @@ composer require cashkdiopen/payments
 Publish the configuration and run migrations:
 
 ```bash
-php artisan vendor:publish --provider="Cashkdiopen\\Laravel\\CashkdiopenServiceProvider"
+php artisan vendor:publish --provider="Cashkdiopen\\Payments\\CashkdiopenServiceProvider"
 php artisan migrate
 ```
 
@@ -65,7 +65,7 @@ MTN_MOMO_SUBSCRIPTION_KEY=your_subscription_key
 ### Create a Payment
 
 ```php
-use Cashkdiopen\\Laravel\\Facades\\Cashkdiopen;
+use Cashkdiopen\\Payments\\Facades\\Cashkdiopen;
 
 $payment = Cashkdiopen::createPayment([
     'amount' => 10000, // Amount in cents (100.00 XOF)
@@ -94,7 +94,7 @@ Route::post('/webhooks/cashkdiopen', [WebhookController::class, 'handle'])
     ->withoutMiddleware(['web', 'csrf']);
 
 // app/Http/Controllers/WebhookController.php
-use Cashkdiopen\\Laravel\\Http\\Middleware\\ValidateWebhookSignature;
+use Cashkdiopen\\Payments\\Http\\Middleware\\ValidateWebhookSignature;
 
 class WebhookController extends Controller
 {
@@ -179,7 +179,7 @@ return [
 
 ```php
 // app/Providers/EventServiceProvider.php
-use Cashkdiopen\\Laravel\\Events\\PaymentSucceeded;
+use Cashkdiopen\\Payments\\Events\\PaymentSucceeded;
 use App\\Listeners\\SendPaymentConfirmation;
 
 protected $listen = [
@@ -220,7 +220,7 @@ vendor/bin/pest --filter=PaymentCreationTest
 ### Mock Payments in Tests
 
 ```php
-use Cashkdiopen\\Laravel\\Testing\\CashkdiopenFake;
+use Cashkdiopen\\Payments\\Testing\\CashkdiopenFake;
 
 public function test_payment_creation()
 {
