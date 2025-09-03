@@ -42,7 +42,6 @@ class CashkdiopenServiceProvider extends ServiceProvider
         $this->bootRoutes();
         $this->bootCommands();
         $this->bootPublishing();
-        $this->bootEventListeners();
     }
 
     /**
@@ -62,14 +61,14 @@ class CashkdiopenServiceProvider extends ServiceProvider
         $this->app->singleton(WebhookService::class, function ($app) {
             return new WebhookService(
                 $app->make(SignatureService::class),
-                $app->make('config')->get('cashkdiopen.webhooks')
+                $app->make('config')->get('cashkdiopen.webhooks', [])
             );
         });
 
         // Signature Service
         $this->app->singleton(SignatureService::class, function ($app) {
             return new SignatureService(
-                $app->make('config')->get('cashkdiopen.webhooks')
+                $app->make('config')->get('cashkdiopen.webhooks', [])
             );
         });
     }
@@ -89,7 +88,7 @@ class CashkdiopenServiceProvider extends ServiceProvider
         // Bind the default provider interface
         $this->app->bind(PaymentProviderInterface::class, function ($app) {
             $factory = $app->make(ProviderFactory::class);
-            $defaultProvider = $app->make('config')->get('cashkdiopen.default_provider');
+            $defaultProvider = $app->make('config')->get('cashkdiopen.default_provider', 'orange-money');
             
             return $factory->make($defaultProvider);
         });
@@ -204,37 +203,6 @@ class CashkdiopenServiceProvider extends ServiceProvider
                 __DIR__ . '/../resources/views' => resource_path('views/vendor/cashkdiopen'),
             ], 'cashkdiopen-views');
         }
-    }
-
-    /**
-     * Boot event listeners.
-     */
-    protected function bootEventListeners(): void
-    {
-        // Register event listeners for payment events
-        $events = $this->app['events'];
-        
-        // Payment events
-        $events->listen(
-            'Cashkdiopen\\Payments\\Events\\PaymentCreated',
-            'Cashkdiopen\\Payments\\Listeners\\LogPaymentCreated'
-        );
-        
-        $events->listen(
-            'Cashkdiopen\\Payments\\Events\\PaymentSucceeded',
-            'Cashkdiopen\\Payments\\Listeners\\LogPaymentSucceeded'
-        );
-        
-        $events->listen(
-            'Cashkdiopen\\Payments\\Events\\PaymentFailed',
-            'Cashkdiopen\\Payments\\Listeners\\LogPaymentFailed'
-        );
-        
-        // Webhook events
-        $events->listen(
-            'Cashkdiopen\\Payments\\Events\\WebhookReceived',
-            'Cashkdiopen\\Payments\\Listeners\\ProcessWebhook'
-        );
     }
 
     /**
