@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Cashkdiopen\Laravel\Http\Controllers\WebhookController;
+use Cashkdiopen\Payments\Http\Controllers\WebhookController;
 
 /*
 |--------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Cashkdiopen\Laravel\Http\Controllers\PaymentController;
+use Cashkdiopen\Payments\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
